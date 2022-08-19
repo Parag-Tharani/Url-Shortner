@@ -1,0 +1,39 @@
+.flexedView{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+  
+  .navbar{
+    width: 70vw;
+    margin: auto;
+    color: white;
+    background-color:#1768aae6;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .navbar2{
+    width: 40vw;
+    margin: auto;
+    font-size: 19px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-bottom: 20px;
+  }
+  
+  .heading{
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    font-size: 35px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+  
+  .navbut{
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  .navbut:hover{
+    text-decoration:underline;
+  }
