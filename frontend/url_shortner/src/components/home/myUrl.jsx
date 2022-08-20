@@ -19,13 +19,13 @@ export const UserUrls = () => {
         if(token !== null && token !== "" && token !== undefined){
             
             const decoded = jwt_decode(token);
-
+            console.log(decoded.id)
             fetch(`${Api_Url}/getUser`,{
                 method:"POST",
                 headers:{
-                    "Content-Type":"text"
+                    "Content-Type":"application/json"
                 },
-                body:{id:decoded.id}
+                body:JSON.stringify({id:decoded.id})
             })
             .then((res) => res.json())
             .then((data) =>  data.Urls.forEach((items) => {

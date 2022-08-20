@@ -13,7 +13,7 @@ export const Navbar = () => {
 
     const [loggedin , setLoggedin] = React.useState(false)
     const [name, setName] = React.useState("")
-    const token = localStorage.getItem("token")
+    let token = localStorage.getItem("token")
 
     React.useEffect(() => {
         
@@ -24,9 +24,9 @@ export const Navbar = () => {
             fetch(`${Api_Url}/getUser`,{
                 method:"POST",
                 headers:{
-                    "Content-Type":"text"
+                    "Content-Type":"application/json"
                 },
-                body:{id:decoded.id}
+                body:JSON.stringify({id:decoded.id})
             })
             .then((res) => res.json())
             .then((data) =>  setName(data.user_name), setLoggedin(true))

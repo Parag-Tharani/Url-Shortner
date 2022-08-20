@@ -8,7 +8,7 @@ const SECRET = "thisissecretkeyfortwitterappcloneś"
 async function findOneUser(req,res){
     const { id } = req.body
 
-    let existingUser = await UserData.findOne({id})
+    let existingUser = await UserData.findOne({_id:id})
 
     if(existingUser){
         return res.send(existingUser)
@@ -91,7 +91,7 @@ async function createShortUrl(req,res){
             await UrlData.create(body)
             
             existingUser.Urls.push(shortUrl)
-            await UserData.findOneAndUpdate({id:decode_token.id}, {Urls:existingUser.Urls})
+            await UserData.findOneAndUpdate({_id:decode_token.id}, {Urls:existingUser.Urls})
 
             return res.status(201).send("Url Shorten Successfully")
 
