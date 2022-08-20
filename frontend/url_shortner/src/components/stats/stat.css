@@ -1,0 +1,14 @@
+.statsHeading{
+    margin-top: 50px;
+    color: rgb(49, 33, 33);
+    font-size: 34px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.statsBox2{
+    width:70vw;
+    margin: auto;
+    color: rgb(128, 124, 124);
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

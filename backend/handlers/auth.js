@@ -121,9 +121,6 @@ async function regUser(req,res){
             if(error.code){
                 return res.status(409).send("Name already exists")
             }
-            else if(error.errors.user_name){
-                return res.status(406).send("User name should not consist spaces")
-            }
             else if(error.errors.password){
                 return res.status(406).send("Password length should be more than 8")
             }

@@ -4,9 +4,7 @@ const { isEmail } = require("validator")
 const UserSchema = new mongoose.Schema({
     user_name:{
         type:String,
-        match:/^\S+$/,
         required:true,
-        unique:true
     },
     email:{
         type:String,

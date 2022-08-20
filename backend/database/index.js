@@ -1,7 +1,8 @@
 const mongoose = require("mongoose")
 
 async function connectDatabase(){
-    const db_Url = "mongodb+srv://ParagTharani:2324password2324@cluster0.1hiejwx.mongodb.net/Url_Shortner"
+    const db_Url = "mongodb://localhost:27017/Url_Shortner"
+    // "mongodb+srv://ParagTharani:2324password2324@cluster0.1hiejwx.mongodb.net/Url_Shortner"
     // "mongodb://localhost:27017/Url_Shortner"
 
     try {

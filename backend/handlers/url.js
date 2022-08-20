@@ -5,6 +5,18 @@ const jwt = require("jsonwebtoken");
 const SECRET = "thisissecretkeyfortwitterappcloneś"
 
 
+async function findOneUser(req,res){
+    const { id } = req.body
+
+    let existingUser = await UserData.findOne({id})
+
+    if(existingUser){
+        return res.send(existingUser)
+    }else{
+        return res.status(404).send("Wrong token provided")
+    }
+}
+
 async function getAllUrl(req,res){
     const { skip , limit} = req.query
 
@@ -26,13 +38,31 @@ async function deleteOutdatedUrl(req,res){
 
 }
 
+async function findUrl(req,res){
+
+    const { shortUrl } = req.body
+
+    try {
+        let urlData = await UrlData.findOne({shortUrl})
+
+        if(urlData){
+            return res.send(urlData)
+        }else{
+            return res.status(404).send("Url not Found")   
+        }
+    } catch (error) {
+     return res.status(404).send("Url not Found")   
+    }
+
+}
+
 
 
 async function createShortUrl(req,res){
     let { longUrl, shortUrl } = req.body
     let { token } = req.headers
 
-    if(shortUrl === undefined){
+    if(shortUrl === undefined || shortUrl === ""){
         shortUrl = shortid.generate()
     }
 
@@ -95,7 +125,7 @@ async function clickShortUrl(req,res){
     let existingUrl = await UrlData.findOne({shortUrl})
 
     if(existingUrl){
-        return res.redirect(existingUrl.longUrl)
+        return res.send({longUrl:existingUrl.longUrl})
     }else{
         res.status(404).send("Shorten Url Does not exists")
     }
@@ -103,7 +133,9 @@ async function clickShortUrl(req,res){
 
 
 module.exports = {
+    findOneUser,
     getAllUrl,
+    findUrl,
     createShortUrl,
     clickShortUrl,
     deleteOutdatedUrl
