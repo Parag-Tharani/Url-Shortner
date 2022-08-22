@@ -16,7 +16,14 @@ export const Signup = () => {
 
     
 
-
+    async function handleRegisOk(res){
+        const data = await res.json()
+        
+            setError(false)
+            setErrMsg("")
+            localStorage.setItem("token", data.encryptionToken)
+            navigate("/")
+    }
 
     const HandleRegister = () => {
 
@@ -53,9 +60,7 @@ export const Signup = () => {
                 setErrMsg("Provided Email / Phone Number is aleady registered")
             }
             else if(res.status === 201){
-                setError(false)
-                setErrMsg("")
-                navigate("/login")
+                handleRegisOk(res)
             }else{
                 setError(true)
                 setErrMsg("Please Enter a valid Email")
