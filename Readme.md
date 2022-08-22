@@ -1,6 +1,7 @@
 <h1>Full Stack Url Shortning Web Application</h1>
 
-<h2>Demostration link - <a href="https://drive.google.com/drive/folders/17lGqTgGDxpSF3xWkjzeJTeyouG7EMtFw?usp=sharing">Url Shortner</a></h2>
+<h2>Demostration link - <a href="https://drive.google.com/drive/folders/17lGqTgGDxpSF3xWkjzeJTeyouG7EMtFw?usp=sharing">Url Shortner Demostration Video</a></h2>
+<h2>Web App Link --> https://url-shortening-web-app.netlify.app (Note - backend is not deployed yet)</h2>
 
 <p>In this web app User can see all the shorten URL which are created within 48hrs.</p>
 <p>User can also create any short Url once they are logged in.</p>

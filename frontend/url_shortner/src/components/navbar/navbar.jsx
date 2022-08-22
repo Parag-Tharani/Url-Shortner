@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import jwt_decode from "jwt-decode";
 
 export const Api_Url = "http://localhost:8080"
-export const home_url = "http://localhost:3000"
+export const home_url = "https://url-shortening-web-app.netlify.app"
 
 export const Navbar = () => {
 
