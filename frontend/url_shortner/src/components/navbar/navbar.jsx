@@ -4,7 +4,7 @@ import { Box, Button, Popover } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 import jwt_decode from "jwt-decode";
 
-export const Api_Url = "http://localhost:8080"
+export const Api_Url = "https://shrouded-lowlands-51515.herokuapp.com"
 export const home_url = "https://url-shortening-web-app.netlify.app"
 
 export const Navbar = () => {
