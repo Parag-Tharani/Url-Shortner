@@ -1,10 +1,8 @@
 const mongoose = require("mongoose")
+require('dotenv').config();
 
 async function connectDatabase(){
-    const db_Url = "mongodb+srv://ParagTharani:2324password2324@cluster0.x4xjdej.mongodb.net/URL_Shortner"
-    // "mongodb+srv://ParagTharani:2324password2324@cluster0.x4xjdej.mongodb.net/URL_Shortner"
-    // "mongodb+srv://ParagTharani:2324password2324@cluster0.1hiejwx.mongodb.net/Url_Shortner"
-    // "mongodb://localhost:27017/Url_Shortner"
+    const db_Url = process.env.db_Url
 
     try {
         await mongoose.connect(db_Url)

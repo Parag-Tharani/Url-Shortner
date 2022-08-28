@@ -3,10 +3,9 @@ const cors = require("cors");
 const connectDatabase = require("./database");
 const authRouter = require("./routes/auth");
 const UrlRoutes = require("./routes/url");
+require('dotenv').config();
 
-
-const Port = 8080
-const port = "https://git.heroku.com/shrouded-lowlands-51515.git"
+const Port = process.env.PORT
 
 const app = express()
 
